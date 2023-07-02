@@ -10,7 +10,11 @@ This Template Component Plug-in only supports 'Single (Partial)' usage. It can b
 # Usage
 The plugin renders a country flag based on a <b>Lower Case</b> 2-character ISO 3166-1-alpha-2 code. You can find a complete list of codes [here](https://www.iso.org/obp/ui/#search)
 
+## Single Row Query in Region
+![image](https://github.com/jon-dixon/country_flags_apex_tcp/assets/107701070/c3c7ace0-ca87-4160-bc09-621ea5ef1684)
 
+## Interactive Report Column
+![image](https://github.com/jon-dixon/country_flags_apex_tcp/assets/107701070/d6c81d7f-8829-46c1-8ca5-0663ce9074bd)
 
 ## Usage in a Template Directive
 Reference the plugin as follows to use it anywhere that Template Directives can be used:
