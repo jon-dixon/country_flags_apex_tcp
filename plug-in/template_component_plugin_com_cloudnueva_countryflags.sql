@@ -33,7 +33,7 @@ prompt APPLICATION 232002 - Country Flags Demo
 -- Application Export:
 --   Application:     232002
 --   Name:            Country Flags Demo
---   Date and Time:   18:23 Sunday July 2, 2023
+--   Date and Time:   23:05 Sunday July 2, 2023
 --   Exported By:     JON_DIXON_US@YAHOO.COM
 --   Flashback:       0
 --   Export Type:     Component Export
@@ -65,7 +65,7 @@ wwv_flow_imp_shared.create_plugin(
 '{if APEX$IS_LAZY_LOADING/}',
 '  <div>Loading...</div>',
 '{else/}',
-'  <span class="fi #SHAPE# fi-#COUNRY_CODE# fa-#SIZE#"></span>',
+'  <span class="{case SHAPE/} {when CIRCLE/}fi fis fi-round{when RECTANGLE/}fi{otherwise/} fi fis{endcase/} fi-#COUNRY_CODE# fa-#SIZE#"></span>',
 '{endif/}'))
 ,p_default_escape_mode=>'HTML'
 ,p_translate_this_template=>false
@@ -93,46 +93,6 @@ wwv_flow_imp_shared.create_plugin_attribute(
 ,p_is_translatable=>false
 ,p_examples=>'gb,us,de'
 ,p_help_text=>'Provide a <b>Lower Case</b> 2-character ISO 3166-1-alpha-2 code. You can find a complete list here: https://www.iso.org/obp/ui/#search'
-);
-wwv_flow_imp_shared.create_plugin_attribute(
- p_id=>wwv_flow_imp.id(34590347838781615490)
-,p_plugin_id=>wwv_flow_imp.id(34590347160664615490)
-,p_attribute_scope=>'COMPONENT'
-,p_attribute_sequence=>4
-,p_display_sequence=>40
-,p_static_id=>'SHAPE'
-,p_prompt=>'Shape'
-,p_attribute_type=>'SELECT LIST'
-,p_is_required=>true
-,p_default_value=>'RECTANGLE'
-,p_escape_mode=>'HTML'
-,p_is_translatable=>false
-,p_lov_type=>'STATIC'
-,p_help_text=>'Provide a shape for the flag. Valid values are [RECTANGLE,SQUARE,CIRCLE].'
-);
-wwv_flow_imp_shared.create_plugin_attr_value(
- p_id=>wwv_flow_imp.id(34590348782897615490)
-,p_plugin_attribute_id=>wwv_flow_imp.id(34590347838781615490)
-,p_display_sequence=>10
-,p_display_value=>'Rectangle'
-,p_return_value=>'RECTANGLE'
-,p_is_quick_pick=>true
-);
-wwv_flow_imp_shared.create_plugin_attr_value(
- p_id=>wwv_flow_imp.id(34590349295046615490)
-,p_plugin_attribute_id=>wwv_flow_imp.id(34590347838781615490)
-,p_display_sequence=>20
-,p_display_value=>'Circle'
-,p_return_value=>'fis fi-round'
-,p_is_quick_pick=>true
-);
-wwv_flow_imp_shared.create_plugin_attr_value(
- p_id=>wwv_flow_imp.id(34590348289876615490)
-,p_plugin_attribute_id=>wwv_flow_imp.id(34590347838781615490)
-,p_display_sequence=>30
-,p_display_value=>'Square'
-,p_return_value=>'fis'
-,p_is_quick_pick=>true
 );
 wwv_flow_imp_shared.create_plugin_attribute(
  p_id=>wwv_flow_imp.id(34590362670268790047)
@@ -189,6 +149,45 @@ wwv_flow_imp_shared.create_plugin_attr_value(
 ,p_display_sequence=>50
 ,p_display_value=>'Extra Large'
 ,p_return_value=>'5x'
+,p_is_quick_pick=>true
+);
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(34635642475953787976)
+,p_plugin_id=>wwv_flow_imp.id(34590347160664615490)
+,p_attribute_scope=>'COMPONENT'
+,p_attribute_sequence=>6
+,p_display_sequence=>60
+,p_static_id=>'SHAPE'
+,p_prompt=>'Shape'
+,p_attribute_type=>'SELECT LIST'
+,p_is_required=>true
+,p_default_value=>'RECTANGLE'
+,p_escape_mode=>'HTML'
+,p_is_translatable=>false
+,p_lov_type=>'STATIC'
+);
+wwv_flow_imp_shared.create_plugin_attr_value(
+ p_id=>wwv_flow_imp.id(34635653776190789358)
+,p_plugin_attribute_id=>wwv_flow_imp.id(34635642475953787976)
+,p_display_sequence=>10
+,p_display_value=>'Rectangle'
+,p_return_value=>'RECTANGLE'
+,p_is_quick_pick=>true
+);
+wwv_flow_imp_shared.create_plugin_attr_value(
+ p_id=>wwv_flow_imp.id(34635483592327277523)
+,p_plugin_attribute_id=>wwv_flow_imp.id(34635642475953787976)
+,p_display_sequence=>20
+,p_display_value=>'Square'
+,p_return_value=>'SQUARE'
+,p_is_quick_pick=>true
+);
+wwv_flow_imp_shared.create_plugin_attr_value(
+ p_id=>wwv_flow_imp.id(34635484635390278517)
+,p_plugin_attribute_id=>wwv_flow_imp.id(34635642475953787976)
+,p_display_sequence=>30
+,p_display_value=>'Circle'
+,p_return_value=>'CIRCLE'
 ,p_is_quick_pick=>true
 );
 end;
