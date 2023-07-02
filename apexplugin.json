@@ -1,0 +1,35 @@
+{
+  "name": "Country Flags",
+  "version": "1.0",
+  "description": "Template Component Plugin which can be used to Display Country Flag images in report columns and regions. Usable as Single (Partial) Template Component Plugin.",
+  "keywords": ["FLAG", "COUNTRY"],
+  "homepage": "https://github.com/jon-dixon/country_flags_apex_tcp",
+  "bugs": {
+    "url": "https://github.com/jon-dixon/country_flags_apex_tcp/issues",
+    "email": "jon+flags-plugin@cloudnueva.com"
+  },
+  "license": "MIT",
+  "commercial": "No",
+  "author": {
+    "name": "Jon Dixon",
+    "email": "jon@cloudnueva.com",
+    "url": "https://blogs.cloudnueva.com",
+    "twitter": "JonDixonUS"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jon-dixon/country_flags_apex_tcp.git"
+  },
+  "oracle": {
+    "versions": ["23c", "21c", "19c", "18c"],
+    "apex": {
+      "versions": ["23.1"],
+      "plugin": {
+        "internalName": "COM.CLOUDNUEVA.COUNTRYFLAGS",
+        "type": "template component",
+        "demo": "https://apex.oracle.com/pls/apex/r/jdd/flags/home",
+        "previewImage": "https://raw.githubusercontent.com/jon-dixon/country_flags_apex_tcp/main/assets/Country_Flags_Plugin_Screenshot.png?raw=true"
+      }
+    }
+  }
+}
